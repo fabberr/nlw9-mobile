@@ -14,14 +14,14 @@ export const styles = StyleSheet.create({
   },
   cover: {
     width: 240,
-    heigth: 320,
+    height: 320,
     justifyContent: 'flex-end',
     borderRadius: 8,
     overflow: 'hidden'
   },
   footer: {
     width: '100%',
-    heigth: 120,
+    height: 120,
     padding: 16,
     justifyContent: 'flex-end'
   },
