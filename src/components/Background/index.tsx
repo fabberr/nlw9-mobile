@@ -10,8 +10,8 @@ import bgImg from '../../assets/background-galaxy.png';
 /********** Interfaces **********/
 
 interface BackgroundProps {
-    children: React.ReactNode;
-};
+  children: React.ReactNode;
+}
 
 /**
  * Component: Background
