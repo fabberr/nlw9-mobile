@@ -8,8 +8,8 @@ import { styles } from './styles';
 
 /********** Interfaces **********/
 interface HeadingProps extends ViewProps {
-    title: string;
-    subtitle: string;
+  title: string;    /** Title to be displayed. */
+  subtitle: string; /** Subtitle to be displayed. */
 }
 
 /**
@@ -19,12 +19,12 @@ interface HeadingProps extends ViewProps {
  */
 export function Heading({ title, subtitle, ...rest }: HeadingProps) {
   
-    /********** TSX Code **********/
+  /********** TSX Code **********/
   
   return (
     <View style={styles.container} {...rest}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtitle}>{subtitle}</Text>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
     </View>
   );
 }

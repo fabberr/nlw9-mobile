@@ -15,10 +15,10 @@ import { THEME } from '../../theme';
 export function LoadingIndicator() {
   return (
     <View style={styles.container}>
-        <ActivityIndicator
-            color={THEME.COLORS.PRIMARY}
-            size='large'
-        />
+      <ActivityIndicator
+        color={THEME.COLORS.PRIMARY}
+        size='large'
+      />
     </View>
   );
 }
