@@ -1,7 +1,7 @@
 /********** Modules Imports **********/
 
 // 3rd-party
-import { Image, View } from 'react-native';
+import { FlatList, Image, View } from 'react-native';
 
 // styles and assets
 import { styles } from './styles';
@@ -29,7 +29,17 @@ export function Home() {
         subtitle="Selecione o game que deseja jogar..." 
       />
 
-      <GameCard data={GAMES[0]} />
+      <FlatList
+        contentContainerStyle={styles.contentList}
+        data={GAMES}
+        keyExtractor={ item => item.id }
+        renderItem={({ item }) => (
+          <GameCard data={item} />
+        )}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+      />
+
     </View>
   );
 }
