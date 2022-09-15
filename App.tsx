@@ -1,18 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native';
+/********** Module Imports **********/
+
+// React
+import { StatusBar } from 'react-native';
+
+// internal components
+import { Background } from './src/components/Background';
+
+/********** Component: App (main entry point) **********/
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>iwtcits</Text>
-    </View>
+    <Background>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+    </Background>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
