@@ -7,7 +7,7 @@
 */
 
 // from ENV
-export const API_HOSTNAME = '0d2a-186-193-121-19.sa.ngrok.io';  /** LAN IP adress of the server. */
+export const API_HOSTNAME = '52f1-186-193-121-19.sa.ngrok.io';  /** LAN IP adress of the server. */
 export const API_PORT     = '3333';                             /** Port the server is listening for connection on. */
 
 // additional values

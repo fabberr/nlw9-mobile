@@ -4,7 +4,10 @@
 import { useEffect, useState } from 'react';
 
 // React Native
-import { FlatList, Image, View } from 'react-native';
+import { FlatList, Image } from 'react-native';
+
+// 3rd-party components
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // environment variables
 import * as appconfig from '../..//appconfig';
@@ -38,7 +41,7 @@ export function Home() {
   /********** TSX Code **********/
   
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image source={logoImg} style={styles.logo} />
 
       <Heading 
@@ -55,8 +58,6 @@ export function Home() {
         showsHorizontalScrollIndicator={false}
       />
 
-    </View>
+    </SafeAreaView>
   );
 }
-
-/** @todo move interface declarations into a separate file */
