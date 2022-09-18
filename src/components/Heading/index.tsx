@@ -17,12 +17,12 @@ interface HeadingProps extends ViewProps {
  * 
  * A textual component containing a title and subtitle.
  */
-export function Heading({ title, subtitle, ...rest }: HeadingProps) {
+export function Heading({ title, subtitle, ...remainingProps }: HeadingProps) {
   
   /********** TSX Code **********/
   
   return (
-    <View style={styles.container} {...rest}>
+    <View style={styles.container} {...remainingProps}>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.subtitle}>{subtitle}</Text>
     </View>

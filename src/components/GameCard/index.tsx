@@ -27,12 +27,12 @@ interface Props extends TouchableOpacityProps {
  * 
  * Displays information about a game title, including a cover image and number of ads.
 */
-export function GameCard({ data, ...rest }: Props) {
+export function GameCard({ data, ...remainingProps }: Props) {
 
   /********** TSX Code **********/
   
   return (
-    <TouchableOpacity style={styles.container} {...rest}>
+    <TouchableOpacity style={styles.container} {...remainingProps}>
       <ImageBackground style={styles.cover} source={data.cover}>
         <LinearGradient style={styles.footer} colors={THEME.COLORS.FOOTER}>
           <Text style={styles.name}>{data.name}</Text>
