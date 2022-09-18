@@ -16,8 +16,8 @@ import {
 import { Background } from './src/components/Background';
 import { LoadingIndicator } from './src/components/LoadingIndicator';
 
-// app screens
-import { Home } from './src/screens/Home';
+// routes
+import { Routes } from './src/routes';
 
 /**
  * Component: App.
@@ -43,7 +43,7 @@ export default function App() {
       <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
 
       {/* Wait for fonts to load, then redirect to Home screen */}
-      { fontsLoaded ? <Home/> : <LoadingIndicator/> }
+      { fontsLoaded ? <Routes /> : <LoadingIndicator /> }
     </Background>
   );
 }

@@ -17,7 +17,8 @@ interface BackgroundProps {
 /**
  * Component: Background.
  * 
- * Root component of the application containing a background image shared by all screens.
+ * This component is ment to be used as a wrapper for screen components and sets
+ * common background image used across all screens.
 */
 export function Background({ children }: BackgroundProps) {
 

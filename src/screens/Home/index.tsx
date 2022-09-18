@@ -1,13 +1,12 @@
 /********** Modules Imports **********/
 
-// React
+// React, React Native
 import { useEffect, useState } from 'react';
-
-// React Native
 import { FlatList, Image } from 'react-native';
 
 // 3rd-party components
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
 // environment variables
 import * as appconfig from '../..//appconfig';
@@ -17,6 +16,7 @@ import { styles } from './styles';
 import logoImg from '../../assets/logo-nlw-esports.png';
 
 // components
+import { Background } from '../../components/Background';
 import { Heading } from '../../components/Heading';
 import { Game, GameCard } from '../../components/GameCard';
 
@@ -26,9 +26,17 @@ import { Game, GameCard } from '../../components/GameCard';
 export function Home() {
 
   /********** React Hooks **********/
+
+  /** Handles navigation between screens. */
+  const navigation = useNavigation();
+
+  function handleOpenGameAds() {
+    navigation.navigate('game');
+  }
   
-  // fetch list of games from our API once per page load
+  /** Fetch list of games from our API once per component render. */
   const [games, setGames] = useState<Game[]>([]);
+
   useEffect(() => {
     const resource = 'games';
     const URL = `https://${appconfig.API_BASE_URL}/${resource}`
@@ -41,23 +49,29 @@ export function Home() {
   /********** TSX Code **********/
   
   return (
-    <SafeAreaView style={styles.container}>
-      <Image source={logoImg} style={styles.logo} />
+    <Background>
+      <SafeAreaView style={styles.container}>
+        <Image source={logoImg} style={styles.logo} />
 
-      <Heading 
-        title="Encontre seu duo!" 
-        subtitle="Selecione o game que deseja jogar..." 
-      />
+        <Heading 
+          title="Encontre seu duo!" 
+          subtitle="Selecione o game que deseja jogar..." 
+        />
 
-      <FlatList
-        contentContainerStyle={styles.contentList}
-        data={games}
-        keyExtractor={ item => item.id }
-        renderItem={({ item }) => <GameCard data={item} />}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-      />
-
-    </SafeAreaView>
+        <FlatList
+          contentContainerStyle={styles.contentList}
+          data={games}
+          keyExtractor={ item => item.id }
+          renderItem={({ item }) => (
+            <GameCard
+              data={item}
+              onPress={handleOpenGameAds}
+            />
+          )}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        />
+      </SafeAreaView>
+    </Background>
   );
 }
