@@ -30,5 +30,10 @@ export const THEME = {
     SM: 14,
     MD: 16,
     LG: 24
+  },
+  COVER_ART: {
+    ORIG_WIDTH: 285,
+    ORIG_HEIGHT: 380,
+    SCALE_FACOR: .6
   }
 };

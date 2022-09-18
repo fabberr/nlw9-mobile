@@ -10,18 +10,18 @@ import { THEME } from '../../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    marginRight: 24
+    marginRight: 16
   },
   cover: {
-    width: 144,
-    height: 256,
+    width: THEME.COVER_ART.ORIG_WIDTH * THEME.COVER_ART.SCALE_FACOR,
+    height: THEME.COVER_ART.ORIG_HEIGHT * THEME.COVER_ART.SCALE_FACOR,
     justifyContent: 'flex-end',
     borderRadius: 8,
     overflow: 'hidden'
   },
   footer: {
     width: '100%',
-    height: 120,
+    height: THEME.COVER_ART.ORIG_HEIGHT * .3,
     padding: 16,
     justifyContent: 'flex-end'
   },
