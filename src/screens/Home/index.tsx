@@ -1,6 +1,6 @@
 /********** Modules Imports **********/
 
-// 3rd-party
+// React Native
 import { FlatList, Image, View } from 'react-native';
 
 // styles and assets

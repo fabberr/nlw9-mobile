@@ -1,6 +1,6 @@
 /********** Module Imports **********/
 
-// 3rd-party
+// React Native
 import { ActivityIndicator, View } from 'react-native';
 
 // styles and assets
@@ -8,9 +8,9 @@ import { styles } from './styles';
 import { THEME } from '../../theme';
 
 /**
- * Component - LoadingIndicator
+ * Component - LoadingIndicator.
  * 
- * Displays a loading indicator on-screen when the app is loading resources.
+ * Displays a loading indicator on-screen for when the app is loading resources.
 */
 export function LoadingIndicator() {
   return (

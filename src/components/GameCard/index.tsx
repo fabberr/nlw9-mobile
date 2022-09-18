@@ -1,7 +1,9 @@
 /********** Module Imports **********/
 
-// 3rd-party
+// React Native
 import { ImageBackground, ImageSourcePropType, Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+
+// 3rd-party components
 import { LinearGradient } from 'expo-linear-gradient';
 
 // styles and assets
@@ -23,7 +25,7 @@ interface Props extends TouchableOpacityProps {
 }
 
 /**
- * Component: GameCard
+ * Component: GameCard.
  * 
  * Displays information about a game title, including a cover image and number of ads.
 */

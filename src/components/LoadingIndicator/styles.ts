@@ -1,6 +1,6 @@
 /********** Module Imports **********/
 
-// 2rd-party
+// React Native
 import { StyleSheet } from 'react-native';
 
 /********** Style Module Exports **********/

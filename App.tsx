@@ -1,7 +1,9 @@
 /********** Module Imports **********/
 
-// 3rd-party
+// React Native
 import { StatusBar } from 'react-native';
+
+// 3rd-party assets
 import {
   useFonts,
   Inter_400Regular,
@@ -14,11 +16,11 @@ import {
 import { Background } from './src/components/Background';
 import { LoadingIndicator } from './src/components/LoadingIndicator';
 
-// screens
+// app screens
 import { Home } from './src/screens/Home';
 
 /**
- * Component: App
+ * Component: App.
  * 
  * Main entry point for the application.
 */
@@ -38,12 +40,9 @@ export default function App() {
   
   return (
     <Background>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
+      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
 
+      {/* Wait for fonts to load, then redirect to Home screen */}
       { fontsLoaded ? <Home/> : <LoadingIndicator/> }
     </Background>
   );

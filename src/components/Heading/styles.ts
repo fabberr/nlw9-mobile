@@ -1,9 +1,9 @@
 /********** Module Imports **********/
 
-// 3rd-party
+// React Native
 import { StyleSheet } from 'react-native';
 
-// internal
+// styles and assets
 import { THEME } from '../../theme';
 
 /********** Style Module Exports **********/
