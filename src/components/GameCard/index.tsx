@@ -12,33 +12,37 @@ import { THEME } from '../../theme';
 
 /********** Interfaces **********/
 
-/** Props Accepted by `GameCard` component. */
-export interface GameCardProps {
-  id: string;                 /** The game's UUID. */
-  name: string;               /** Name of the title. */
-  ads: string;                /** Current number of ads. */
-  cover: ImageSourcePropType; /** URL or path to an image of the game's cover. */
+/** Represents a `game` resource returned from the API. */
+export interface Game {
+  id:       string; /** The game's UUID. */
+  name:     string; /** Name of the game. */
+  coverURL: string; /** URL to an image of the game's cover art. */
+
+  _count: {
+    ads: number; /** Current number of ads for this game. */
+  };
 }
 
-interface Props extends TouchableOpacityProps {
-  data: GameCardProps; /** Data to be displayed in the card. */
+interface GameCardProps extends TouchableOpacityProps {
+  data: Game; /** Data to be displayed in the card. */
 }
 
 /**
  * Component: GameCard.
  * 
  * Displays information about a game title, including a cover image and number of ads.
+ * Supports the same props accepted by `TouchableOpacity` component.
 */
-export function GameCard({ data, ...remainingProps }: Props) {
+export function GameCard({ data, ...remainingProps }: GameCardProps) {
 
   /********** TSX Code **********/
   
   return (
     <TouchableOpacity style={styles.container} {...remainingProps}>
-      <ImageBackground style={styles.cover} source={data.cover}>
+      <ImageBackground style={styles.cover} source={{ uri: data.coverURL }}>
         <LinearGradient style={styles.footer} colors={THEME.COLORS.FOOTER}>
           <Text style={styles.name}>{data.name}</Text>
-          <Text style={styles.ads}>{data.ads} anúncios</Text>
+          <Text style={styles.ads}>{data._count.ads} anúncios</Text>
         </LinearGradient>
       </ImageBackground>
     </TouchableOpacity>
