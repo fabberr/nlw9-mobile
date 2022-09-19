@@ -12,7 +12,7 @@ import { THEME } from '../../theme';
 
 /********** Interfaces **********/
 
-/** Represents a `game` resource returned from the API. */
+/** Represents a `game` resource in the format returned by the API. */
 export interface Game {
   id:       string; /** The game's UUID. */
   name:     string; /** Name of the game. */

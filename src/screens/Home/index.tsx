@@ -30,14 +30,15 @@ export function Home() {
   /** Handles navigation between screens. */
   const navigation = useNavigation();
 
-  function handleOpenGameAds() {
-    navigation.navigate('game');
+  function handleNavigateToGameScreen({ id, name, coverURL }: Game) {
+    navigation.navigate('game', { id, name, coverURL });
   }
   
   /** Fetch list of games from our API once per component render. */
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
+    // 'Fetch all games' API endpoint
     const resource = 'games';
     const URL = `https://${appconfig.API_BASE_URL}/${resource}`
     fetch(URL, { method: 'GET' })
@@ -65,7 +66,7 @@ export function Home() {
           renderItem={({ item }) => (
             <GameCard
               data={item}
-              onPress={handleOpenGameAds}
+              onPress={() => handleNavigateToGameScreen(item)}
             />
           )}
           horizontal
@@ -75,3 +76,5 @@ export function Home() {
     </Background>
   );
 }
+
+/** @todo use RefreshControl component to add pull to refresh behavior */
