@@ -40,21 +40,21 @@ export function DuoAdCard({ data }: DuoAdCardProps) {
   return (
     <View style={styles.container}>
       <DuoAdCardInfo
-        labelText=""
-        infoText=""
+        labelText="Nome"
+        infoText={data.name}
       />
       <DuoAdCardInfo
-        labelText=""
-        infoText=""
+        labelText="Tempo de jogo"
+        infoText={`${data.yearsPlaying} anos`}
       />
       <DuoAdCardInfo
-        labelText=""
-        infoText=""
+        labelText="Disponibilidade"
+        infoText={ `${data.weekdays.length} dias | ${data.hourStart} - ${data.hourEnd}` }
       />
       <DuoAdCardInfo
-        labelText=""
-        infoText=""
-        infoFontColor={THEME.COLORS.SUCCESS}
+        labelText="Chamade de áudio?"
+        infoText={ data.useVoiceChat ? 'Sim' : 'Não' }
+        infoFontColor={ data.useVoiceChat ? THEME.COLORS.SUCCESS : THEME.COLORS.ALERT }
       />
     </View>
   );
